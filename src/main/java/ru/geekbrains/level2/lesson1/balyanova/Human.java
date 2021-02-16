@@ -17,14 +17,24 @@ public class Human implements Entity{
         return name;
     }
 
-    @Override
-    public void run() {
-        System.out.println("Human " + getName() + " run");
+    public void run(int length) {
+
+        if (length <= maxLength) {
+            System.out.println("Human " + name + " run succesfully");
+        } else {
+            System.out.println("Human" + name + " doesn`t run");
+            success = false;
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Human " + getName() + " jump");
+    public void jump(int height) {
+        if(height <= maxHeight) {
+            System.out.println("Human " + name + " jump succesfully");
+        } else {
+            System.out.println("Human " + name + " doesn`t jump");
+            success = false;
+        }
     }
     @Override
     public int getMaxLength() {

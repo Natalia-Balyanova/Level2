@@ -3,7 +3,7 @@ package ru.geekbrains.level2.lesson1.balyanova;
 public class MainApp {
     public static void main(String[] args) {
         Robot r2D2 = new Robot("R2D2", 50, 2);
-        Robot bostonDynamics = new Robot ( "Boston Dynamics", 2000, 5);
+        Robot bostonDynamics = new Robot("Boston Dynamics", 2000, 5);
         Human steave = new Human("Steave", 1000, 1);
         Human tom = new Human("Tom", 2000, 1);
         Cat barsik = new Cat("Barsik", 500, 3);
@@ -34,10 +34,14 @@ public class MainApp {
             for (Entity entity : entities) {
                 if (entity.getSuccess()) { //отсекаем всех, кто не прошел препятствие
                     barriers[i].check(entity);
-                    if(!entity.getSuccess()) { //печатаем выбывших
-                    System.out.println("Выбыл " + entity.getName()); }
-                    if (entity.getSuccess()) { //печатаем оставшихся
-                        System.out.println("Остался " + entity.getName()); }
+                    if (!entity.getSuccess()) { //печатаем выбывших
+                        System.out.println(entity.getName() + "  dropped out!");
+                    }
+                }
+            }
+            for (Entity entity : entities) {
+                if (entity.getSuccess()) {
+                    System.out.println(entity.getName() + " is on distance");
                 }
             }
         }

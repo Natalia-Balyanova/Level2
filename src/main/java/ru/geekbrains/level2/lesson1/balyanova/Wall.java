@@ -7,13 +7,8 @@ public class Wall implements Barrier {
         this.height = height;
     }
 
+    @Override
     public void check(Entity entity) {
-        entity.jump();
-        entity.setSuccess(entity.getMaxHeight() >= height);
-        if (entity.getSuccess()) {
-            System.out.println(entity.getName() + " climb " + height + " m");
-        } else {
-            System.out.println(entity.getName() + " doesn`t climb " + height + " m");
-        }
+        entity.jump(height);
     }
 }

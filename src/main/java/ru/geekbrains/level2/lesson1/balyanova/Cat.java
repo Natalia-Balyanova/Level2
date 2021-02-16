@@ -2,7 +2,7 @@ package ru.geekbrains.level2.lesson1.balyanova;
 
 public class Cat implements Entity {
     private String name;
-    private boolean success = true;
+    private boolean success;
     private int maxLength;
     private int maxHeight;
 
@@ -10,6 +10,7 @@ public class Cat implements Entity {
         this.name = name;
         this.maxLength = maxLength;
         this.maxHeight = maxHeight;
+        this.success = true;
     }
 
     @Override
@@ -23,13 +24,24 @@ public class Cat implements Entity {
     }
 
     @Override
-    public void run() {
-        System.out.println("Cat " + getName() + " run");
+    public void run(int length) {
+
+        if (length <= maxLength) {
+            System.out.println("Cat " + name + " run succesfully");
+        } else {
+            System.out.println(name + " doesn`t run");
+            success = false;
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Cat " + getName() + " jump");
+    public void jump(int height) {
+        if(height <= maxHeight) {
+            System.out.println("Cat " + name + " jump succesfully");
+        } else {
+            System.out.println("Cat " + name + " doesn`t jump");
+            success = false;
+        }
     }
 
     @Override

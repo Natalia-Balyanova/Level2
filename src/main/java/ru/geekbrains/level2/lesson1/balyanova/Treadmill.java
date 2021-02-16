@@ -7,14 +7,8 @@ public class Treadmill implements Barrier {
         this.lenght = lenght;
     }
 
+    @Override
     public void check(Entity entity) {
-        entity.run();
-        entity.setSuccess(entity.getMaxLength() >= lenght);
-        if (entity.getSuccess()) {
-            System.out.println(entity.getName() + " run distance " + lenght + " m"); }
-        else {
-            System.out.println(entity.getName() + " doesn`t run distance " + lenght + " m");
-
-        }
+        entity.run(lenght);
     }
 }

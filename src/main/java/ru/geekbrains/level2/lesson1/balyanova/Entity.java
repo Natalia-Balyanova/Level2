@@ -6,8 +6,8 @@ public interface Entity {
     int getMaxLength();
     int getMaxHeight();
 
-    void run();
-    void jump();
+    void run(int length);
+    void jump(int height);
 
     void setSuccess(boolean success);
 }

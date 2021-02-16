@@ -27,14 +27,24 @@ public class Robot implements Entity {
         this.success = success;
     }
 
-    @Override
-    public void run() {
-        System.out.println("Robot " + getName() + " run");
+    public void run(int length) {
+
+        if (length <= maxLength) {
+            System.out.println("Robot " + name + " run succesfully");
+        } else {
+            System.out.println("Robot " + name + " doesn`t run");
+            success = false;
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println("Robot " + getName() + " jump");
+    public void jump(int height) {
+        if(height <= maxHeight) {
+            System.out.println("Robot " + name + " jump succesfully");
+        } else {
+            System.out.println("Robot " + name + " doesn`t jump");
+            success = false;
+        }
     }
     @Override
     public int getMaxLength() {
