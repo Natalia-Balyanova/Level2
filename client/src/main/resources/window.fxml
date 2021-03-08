@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="center" prefHeight="420.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.level2.lesson4.balyanova.Controller">
+<VBox alignment="center" prefHeight="420.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.balyanova.marchchat.client.Controller">
 
     <TextArea fx:id="chatArea" editable="false" style="-fx-background-color: DARKCYAN; -fx-control-inner-background:PALETURQUOISE " VBox.vgrow="ALWAYS">
-<!--        изменила цвет фона и рамки для поля с чатом-->
         <font>
             <Font size="16.0" />
         </font>
     </TextArea>
     <HBox>
-        <TextField fx:id="msgField" onAction="#reply" promptText="напиши здесь свое сообщение..." HBox.hgrow="ALWAYS">
+
+        <TextField fx:id="msgField" onAction="#reply" promptText="напиши здесь свое сообщение..."  HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets />
          </HBox.margin>
@@ -43,8 +43,8 @@
     <VBox prefHeight="13.0" prefWidth="646.0" />
    <ButtonBar prefHeight="40.0" prefWidth="200.0">
      <buttons>
-         <Button mnemonicParsing="false" text="смайлы" onAction="#sendSmile"/>
-         <Button mnemonicParsing="false" text="прикрепить" onAction="#sendFile"/>
+         <Button mnemonicParsing="false" onAction="#sendSmile" text="смайлы" />
+         <Button mnemonicParsing="false" onAction="#sendFile" text="прикрепить" />
      </buttons>
       <padding>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
